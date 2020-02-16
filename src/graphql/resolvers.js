@@ -7,7 +7,9 @@ export const typeDefs = gql`
 `;
 
 const GET_CART_HIDDEN = gql`
-	cartHidden @client
+	{
+		cartHidden @client
+	}
 `;
 
 export const resolvers = {
