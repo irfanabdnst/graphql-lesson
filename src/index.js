@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import App from './app/App';
+import {default as App} from './app/App.container';
 import INITIAL_DATA from './graphql/initial-data';
 import { resolvers, typeDefs } from './graphql/resolvers';
 import './index.css';
