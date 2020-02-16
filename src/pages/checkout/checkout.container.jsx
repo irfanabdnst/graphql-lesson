@@ -4,14 +4,9 @@ import { flowRight } from 'lodash';
 import { gql } from 'apollo-boost';
 import CheckoutPage from './checkout.component';
 
-const GET_CART_ITEMS = gql`
+const GET_CART_ITEMS_AND_TOTAL = gql`
 	{
 		cartItems @client
-	}
-`;
-
-const GET_TOTAL = gql`
-	{
 		total @client
 	}
 `;
@@ -21,5 +16,5 @@ const CheckoutContainer = ({ data: { cartItems, total } }) => (
 );
 
 export default flowRight(
-	graphql(GET_CART_ITEMS, GET_TOTAL)
+	graphql(GET_CART_ITEMS_AND_TOTAL)
 )(CheckoutContainer);
