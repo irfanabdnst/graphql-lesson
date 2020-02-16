@@ -9,6 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import App from './App';
 import './index.css';
+import { resolvers, typeDefs } from './graphql/resolvers';
 import { persistor, store } from './redux/store';
 
 const httpLink = createHttpLink({
@@ -19,7 +20,15 @@ const cache = new InMemoryCache();
 
 const client = new ApolloClient({
 	link: httpLink,
-	cache
+	cache,
+	resolvers,
+	typeDefs
+});
+
+client.writeData({
+	data: {
+		cartHidden: true
+	}
 });
 
 ReactDOM.render(
