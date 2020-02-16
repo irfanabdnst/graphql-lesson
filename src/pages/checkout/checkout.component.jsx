@@ -1,5 +1,5 @@
 import React from 'react';
-import CheckoutItem from '../../components/checkout-item/checkout-item.component';
+import {default as CheckoutItem} from '../../components/checkout-item/checkout-item.container';
 import './checkout.styles.scss';
 
 const CheckoutPage = ({ cartItems, total }) => (
